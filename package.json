@@ -9,7 +9,7 @@
     "babel-preset-react": "^6.24.1"
   },
   "scripts": {
-    "dev": "babel -w overrides.js -o build/overrides.js",
-    "build": "babel overrides.js -o build/overrides.js"
+    "dev": "babel -w overrides.jsx -o build/overrides.js",
+    "build": "babel overrides.jsx -o build/overrides.js"
   }
 }

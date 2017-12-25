@@ -1,7 +1,7 @@
 'use strict';
 
 window.addEventListener('load', function () {
-    console.log('Applying overrides');
+    // console.log('Applying overrides')
     var sidebar = document.querySelector('#secnav');
     sidebar.querySelectorAll('h4')[1].textContent = 'Schedule';
 

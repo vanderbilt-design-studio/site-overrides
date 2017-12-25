@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    console.log('Applying overrides')
+    // console.log('Applying overrides')
     const sidebar = document.querySelector('#secnav');
     sidebar.querySelectorAll('h4')[1].textContent = 'Schedule';
 
