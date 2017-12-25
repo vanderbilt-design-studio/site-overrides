@@ -1,8 +1,13 @@
 window.addEventListener('load', () => {
-    // console.log('Applying overrides')
+    function clearNode(node) {
+        var cNode = node.cloneNode(false);
+        node.parentNode.replaceChild(cNode, node);
+        return cNode;
+    }
+
     const sidebar = document.getElementById('secnav');
     const hoursTitle = sidebar.getElementsByTagName('h4')[1];
-    Inferno.render(<span>Schedule</span>, hoursTitle);
+    Inferno.render(<span>Schedule</span>, clearNode(hoursTitle));
 
     const hoursWidget = sidebar.getElementsByClassName('textwidget')[1];
     const Hours = () => (
@@ -43,5 +48,5 @@ window.addEventListener('load', () => {
         </div>
     );
 
-    Inferno.render(<Hours />, hoursWidget);
+    Inferno.render(<Hours />, clearNode(hoursWidget));
 });
