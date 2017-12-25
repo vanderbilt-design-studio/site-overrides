@@ -1,10 +1,18 @@
 window.addEventListener('load', () => {
+    function clearNode(node) {
+        const cNode = node.cloneNode(false);
+        node.parentNode.replaceChild(cNode, node);
+        return cNode;
+    }
+
     // console.log('Applying overrides')
     const sidebar = document.querySelector('#secnav');
-    sidebar.querySelectorAll('h4')[1].textContent = 'Schedule';
+    const hoursTitle = clearNode(sidebar.querySelectorAll('h4')[1]);
+    Inferno.render(<span>Schedule</span>, hoursTitle);
 
+    const hoursWidget = clearNode(sidebar.querySelectorAll('.textwidget')[1]);
     const Hours = () => (
-        <div className="textwidget">
+        <div>
             <table>
                 <tbody>
                     <tr>
@@ -41,5 +49,5 @@ window.addEventListener('load', () => {
         </div>
     );
 
-    ReactDOM.render(<Hours />, sidebar.querySelectorAll('.textwidget')[1]);
+    Inferno.render(<Hours />, hoursWidget);
 });

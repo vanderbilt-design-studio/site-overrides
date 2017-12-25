@@ -1,127 +1,22 @@
 'use strict';
 
+var createVNode = Inferno.createVNode;
 window.addEventListener('load', function () {
+    function clearNode(node) {
+        var cNode = node.cloneNode(false);
+        node.parentNode.replaceChild(cNode, node);
+        return cNode;
+    }
+
     // console.log('Applying overrides')
     var sidebar = document.querySelector('#secnav');
-    sidebar.querySelectorAll('h4')[1].textContent = 'Schedule';
+    var hoursTitle = clearNode(sidebar.querySelectorAll('h4')[1]);
+    Inferno.render(createVNode(2, 'span', null, 'Schedule'), hoursTitle);
 
+    var hoursWidget = clearNode(sidebar.querySelectorAll('.textwidget')[1]);
     var Hours = function Hours() {
-        return React.createElement(
-            'div',
-            { className: 'textwidget' },
-            React.createElement(
-                'table',
-                null,
-                React.createElement(
-                    'tbody',
-                    null,
-                    React.createElement(
-                        'tr',
-                        null,
-                        React.createElement(
-                            'td',
-                            null,
-                            'Monday'
-                        ),
-                        React.createElement(
-                            'td',
-                            null,
-                            '2 PM \u2013 10 PM'
-                        )
-                    ),
-                    React.createElement(
-                        'tr',
-                        null,
-                        React.createElement(
-                            'td',
-                            null,
-                            'Tuesday'
-                        ),
-                        React.createElement(
-                            'td',
-                            null,
-                            '2 PM \u2013 10 PM'
-                        )
-                    ),
-                    React.createElement(
-                        'tr',
-                        null,
-                        React.createElement(
-                            'td',
-                            null,
-                            'Wednesday'
-                        ),
-                        React.createElement(
-                            'td',
-                            null,
-                            '2 PM \u2013 10 PM'
-                        )
-                    ),
-                    React.createElement(
-                        'tr',
-                        null,
-                        React.createElement(
-                            'td',
-                            null,
-                            'Thursday'
-                        ),
-                        React.createElement(
-                            'td',
-                            null,
-                            '2 PM \u2013 10 PM'
-                        )
-                    ),
-                    React.createElement(
-                        'tr',
-                        null,
-                        React.createElement(
-                            'td',
-                            null,
-                            'Friday'
-                        ),
-                        React.createElement(
-                            'td',
-                            null,
-                            '12 PM \u2013 4 PM'
-                        )
-                    ),
-                    React.createElement(
-                        'tr',
-                        null,
-                        React.createElement(
-                            'td',
-                            null,
-                            'Saturday'
-                        ),
-                        React.createElement(
-                            'td',
-                            null,
-                            'Closed'
-                        )
-                    ),
-                    React.createElement(
-                        'tr',
-                        null,
-                        React.createElement(
-                            'td',
-                            null,
-                            'Sunday'
-                        ),
-                        React.createElement(
-                            'td',
-                            null,
-                            '4 PM \u2013 10 PM'
-                        )
-                    )
-                )
-            ),
-            React.createElement(
-                'p',
-                null,
-                'We are closed for all school holidays and breaks.'
-            )
-        );
+        return createVNode(2, 'div', null, [createVNode(2, 'table', null, createVNode(2, 'tbody', null, [createVNode(2, 'tr', null, [createVNode(2, 'td', null, 'Monday'), createVNode(2, 'td', null, '2 PM \u2013 10 PM')]), createVNode(2, 'tr', null, [createVNode(2, 'td', null, 'Tuesday'), createVNode(2, 'td', null, '2 PM \u2013 10 PM')]), createVNode(2, 'tr', null, [createVNode(2, 'td', null, 'Wednesday'), createVNode(2, 'td', null, '2 PM \u2013 10 PM')]), createVNode(2, 'tr', null, [createVNode(2, 'td', null, 'Thursday'), createVNode(2, 'td', null, '2 PM \u2013 10 PM')]), createVNode(2, 'tr', null, [createVNode(2, 'td', null, 'Friday'), createVNode(2, 'td', null, '12 PM \u2013 4 PM')]), createVNode(2, 'tr', null, [createVNode(2, 'td', null, 'Saturday'), createVNode(2, 'td', null, 'Closed')]), createVNode(2, 'tr', null, [createVNode(2, 'td', null, 'Sunday'), createVNode(2, 'td', null, '4 PM \u2013 10 PM')])])), createVNode(2, 'p', null, 'We are closed for all school holidays and breaks.')]);
     };
 
-    ReactDOM.render(React.createElement(Hours, null), sidebar.querySelectorAll('.textwidget')[1]);
+    Inferno.render(createVNode(16, Hours), hoursWidget);
 });
