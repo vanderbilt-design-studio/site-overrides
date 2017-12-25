@@ -1,0 +1,11 @@
+#secnav table {
+    padding: 5px 15px;
+}
+
+#secnav table td:first-child {
+    font-weight: bold;
+}
+
+#secnav table td {
+    font-weight: 300;
+}

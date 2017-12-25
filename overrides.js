@@ -38,11 +38,6 @@ window.addEventListener('load', () => {
                 </tbody>
             </table>
             <p>We are closed for all school holidays and breaks.</p>
-            <p>
-                <a href="https://my.vanderbilt.edu/designstudio/hours/">
-                    Full Hours
-                </a>
-            </p>
         </div>
     );
 

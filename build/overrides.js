@@ -119,15 +119,6 @@ window.addEventListener('load', function () {
                 'p',
                 null,
                 'We are closed for all school holidays and breaks.'
-            ),
-            React.createElement(
-                'p',
-                null,
-                React.createElement(
-                    'a',
-                    { href: 'https://my.vanderbilt.edu/designstudio/hours/' },
-                    'Full Hours'
-                )
             )
         );
     };
