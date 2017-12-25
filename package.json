@@ -1,0 +1,15 @@
+{
+  "name": "design-studio-overrides",
+  "version": "0.0.1",
+  "author": "Yunyu Lin <yunyu.lin@vanderbilt.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
+  },
+  "scripts": {
+    "dev": "babel -w overrides.js -o build/overrides.js",
+    "build": "babel overrides.js -o build/overrides.js"
+  }
+}
