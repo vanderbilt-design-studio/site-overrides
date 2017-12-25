@@ -1,10 +1,10 @@
 window.addEventListener('load', () => {
     // console.log('Applying overrides')
-    const sidebar = document.querySelector('#secnav');
-    const hoursTitle = sidebar.querySelectorAll('h4')[1];
+    const sidebar = document.getElementById('secnav');
+    const hoursTitle = sidebar.getElementsByTagName('h4')[1];
     Inferno.render(<span>Schedule</span>, hoursTitle);
 
-    const hoursWidget = sidebar.querySelectorAll('.textwidget')[1];
+    const hoursWidget = sidebar.getElementsByClassName('textwidget')[1];
     const Hours = () => (
         <div>
             <table>
