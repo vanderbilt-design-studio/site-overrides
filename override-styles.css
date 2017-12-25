@@ -1,0 +1,22 @@
+/*
+ * Remove incorrect hours, replace year with Schedule
+ */
+#secnav > h4:nth-of-type(2), #secnav > .textwidget:nth-of-type(2) > p:first-child {
+    line-height: 0;
+    color: transparent;
+    user-select: none;
+}
+
+#secnav > .textwidget:nth-of-type(2) > p:first-child {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+#secnav > h4:nth-of-type(2):after {
+    content: 'Schedule';
+    display: block;
+    color: #006682;
+    line-height: 1.25;
+    cursor: text;
+}
