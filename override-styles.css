@@ -15,5 +15,10 @@
 /* Hide legacy header error */
 .graphicheader
     img[src='https://my.vanderbilt.edu/designstudio/files/2015/03/DSHeader.png'] {
-    display: none;
+    visibility: hidden;
+}
+
+.graphicheader img {
+    width: 950px;
+    height: 100px;
 }
