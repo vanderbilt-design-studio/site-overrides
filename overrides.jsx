@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     function clearNode(node) {
         var cNode = node.cloneNode(false);
         node.parentNode.replaceChild(cNode, node);
@@ -8,10 +8,7 @@ window.addEventListener('load', () => {
     const header = document.getElementsByClassName('graphicheader')[0];
     const headerLink = header.getElementsByTagName('a')[0];
     Inferno.render(
-        <img
-            src="https://vanderbilt-design-studio.github.io/site-overrides/DSHeader.svg"
-            width="950"
-        />,
+        <img src="https://vanderbilt-design-studio.github.io/site-overrides/DSHeader.svg" />,
         clearNode(headerLink)
     );
 
