@@ -19,7 +19,14 @@
 
 /* Fix VU template responsiveness overflow */
 @media only screen and (max-width: 768px) {
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
     }
+}
+
+/* Less ugly VUSE logo */
+.englogo h1 a {
+    background: url(https://vanderbilt-design-studio.github.io/site-overrides/ENGIN-logo.svg)
+        no-repeat !important;
 }
