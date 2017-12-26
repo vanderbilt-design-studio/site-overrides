@@ -6,10 +6,10 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-inferno": "^3.3.1",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2"
   },
   "scripts": {
-    "dev": "babel -w overrides.jsx -o build/overrides.js",
-    "build": "babel overrides.jsx -o build/overrides.js"
+    "build": "babel src/js/ -d out/ && node-sass src/scss/ -o out/ && cp -r assets/* out/"
   }
 }

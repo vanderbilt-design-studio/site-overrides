@@ -1,15 +1,15 @@
 #secnav table {
     padding: 5px 15px;
-}
 
-#secnav table td:first-child {
-    font-weight: bold;
-    text-align: initial;
-}
+    td {
+        font-weight: 300;
+        text-align: right;
 
-#secnav table td {
-    font-weight: 300;
-    text-align: right;
+        &:first-child {
+            font-weight: bold;
+            text-align: initial;
+        }
+    }
 }
 
 .graphicheader img {
@@ -27,6 +27,5 @@
 
 /* Less ugly VUSE logo */
 .englogo h1 a {
-    background: url(https://vanderbilt-design-studio.github.io/site-overrides/ENGIN-logo.svg)
-        no-repeat !important;
+    background: url('ENGIN-logo.svg') no-repeat !important;
 }
