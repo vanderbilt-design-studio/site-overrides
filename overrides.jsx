@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </tr>
                 </tbody>
             </table>
-            <p>We are closed for all school holidays and breaks.</p>
+            <p>We are closed during all school holidays and breaks.</p>
         </div>
     );
 
