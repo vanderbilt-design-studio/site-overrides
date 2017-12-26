@@ -8,6 +8,13 @@ window.addEventListener('load', function () {
         return cNode;
     }
 
+    var header = document.getElementsByClassName('graphicheader')[0];
+    var headerLink = header.getElementsByTagName('a')[0];
+    Inferno.render(createVNode(2, 'img', null, null, {
+        'src': 'https://vanderbilt-design-studio.github.io/site-overrides/DSHeader.svg',
+        'width': '950'
+    }), clearNode(headerLink));
+
     var sidebar = document.getElementById('secnav');
     var hoursTitle = sidebar.getElementsByTagName('h4')[1];
     Inferno.render(createVNode(2, 'span', null, 'Schedule'), clearNode(hoursTitle));
