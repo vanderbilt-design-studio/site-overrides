@@ -4,8 +4,10 @@
 
 #secnav table td:first-child {
     font-weight: bold;
+    text-align: initial;
 }
 
 #secnav table td {
     font-weight: 300;
+    text-align: right;
 }
