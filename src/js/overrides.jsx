@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementsByClassName('graphicheader')[0];
     const headerLink = header.getElementsByTagName('a')[0];
     Inferno.render(
-        <img src="https://vanderbilt-design-studio.github.io/site-overrides/DSHeader.svg" />,
+        <img src="https://design-studio.netlify.com/DSHeader.svg" />,
         clearNode(headerLink)
     );
 
