@@ -22,3 +22,10 @@
     width: 950px;
     height: 100px;
 }
+
+/* Fix VU template responsiveness overflow */
+@media only screen and (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+}
