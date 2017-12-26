@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     function clearNode(node) {
-        var cNode = node.cloneNode(false);
+        const cNode = node.cloneNode(false);
         node.parentNode.replaceChild(cNode, node);
         return cNode;
     }
