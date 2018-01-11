@@ -56,4 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     Inferno.render(<Hours />, clearNode(hoursWidget));
+
+    const socket = io('https://ds-sign.yunyul.in');
+    socket.on('status', data => console.log(data));
 });
