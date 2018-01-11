@@ -1,3 +1,6 @@
+import Inferno from 'inferno';
+import io from 'socket.io-client';
+
 import './overrides.scss';
 import DSHeader from './assets/DSHeader.svg';
 
@@ -10,10 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const header = document.getElementsByClassName('graphicheader')[0];
     const headerLink = header.getElementsByTagName('a')[0];
-    Inferno.render(
-        <img src={DSHeader} />,
-        clearNode(headerLink)
-    );
+    Inferno.render(<img src={DSHeader} />, clearNode(headerLink));
 
     const sidebar = document.getElementById('secnav');
     const hoursTitle = sidebar.getElementsByTagName('h4')[1];
