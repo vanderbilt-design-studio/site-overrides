@@ -1,3 +1,6 @@
+import './overrides.scss';
+import DSHeader from './assets/DSHeader.svg';
+
 document.addEventListener('DOMContentLoaded', () => {
     function clearNode(node) {
         const cNode = node.cloneNode(false);
@@ -8,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementsByClassName('graphicheader')[0];
     const headerLink = header.getElementsByTagName('a')[0];
     Inferno.render(
-        <img src="https://design-studio.netlify.com/DSHeader.svg" />,
+        <img src={DSHeader} />,
         clearNode(headerLink)
     );
 
