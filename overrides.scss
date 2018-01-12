@@ -12,9 +12,10 @@
     }
 }
 
-.graphicheader img {
+.graphicheader .header-image {
     width: 950px;
     height: 100px;
+    background: url('./assets/DSHeader.svg');
 }
 
 /* Fix VU template responsiveness overflow */
@@ -22,6 +23,10 @@
     html,
     body {
         overflow-x: hidden;
+    }
+
+    .graphicheader .header-image {
+        display: none;
     }
 }
 

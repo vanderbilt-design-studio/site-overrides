@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const header = document.getElementsByClassName('graphicheader')[0];
     const headerLink = header.getElementsByTagName('a')[0];
-    Inferno.render(<img src={DSHeader} />, clearNode(headerLink));
+    Inferno.render(<div className='header-image' />, clearNode(headerLink));
 
     const sidebar = document.getElementById('secnav');
     const hoursTitle = sidebar.getElementsByTagName('h4')[1];
