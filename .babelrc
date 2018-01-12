@@ -1,4 +1,4 @@
 {
-    "presets": ["env"],
-    "plugins": ["inferno"]
+    "presets": ["env", "stage-2"],
+    "plugins": [["transform-react-jsx", { "pragma": "h" }]]
 }
