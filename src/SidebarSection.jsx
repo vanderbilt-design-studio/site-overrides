@@ -36,6 +36,15 @@ const Hours = () => (
     </table>
 );
 
+const StatusSign = ({ bgColor, title, subtitle }) => (
+    <div className="status-sign" style={{ backgroundColor: bgColor || '#777' }}>
+        <div class="sign-text">
+            <div class="title">{title}</div>
+            <div class="subtitle">{subtitle}</div>
+        </div>
+    </div>
+);
+
 export default class SidebarSection extends Component {
     state = {};
 
@@ -47,9 +56,7 @@ export default class SidebarSection extends Component {
     render() {
         return (
             <div>
-                <div style={{ display: 'none' }}>
-                    {JSON.stringify(this.state)}
-                </div>
+                {this.state.title && <StatusSign {...this.state} />}
                 <Hours />
                 <p>We are closed during all school holidays and breaks.</p>
             </div>
