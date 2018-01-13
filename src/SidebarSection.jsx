@@ -46,17 +46,21 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
 );
 
 export default class SidebarSection extends Component {
-    state = {};
+    state = { signData: {} };
 
     componentDidMount() {
         const socket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
-        socket.onmessage = ({ data }) => this.setState(JSON.parse(data));
+        socket.onmessage = ({ data }) =>
+            this.setState({ signData: JSON.parse(data) });
     }
 
     render() {
+        const { signData } = this.state;
         return (
             <div>
-                {this.state.title && <StatusSign {...this.state} />}
+                {(signData.title || signData.subtitle) && (
+                    <StatusSign {...signData} />
+                )}
                 <Hours />
                 <p>We are closed during all school holidays and breaks.</p>
             </div>
