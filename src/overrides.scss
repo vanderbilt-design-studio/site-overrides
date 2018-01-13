@@ -15,7 +15,7 @@
 .graphicheader .header-image {
     width: 950px;
     height: 100px;
-    background: url('./assets/DSHeader.svg');
+    background: url('../assets/DSHeader.svg');
 }
 
 /* Fix VU template responsiveness overflow */
@@ -32,7 +32,7 @@
 
 /* Less ugly VUSE logo */
 .englogo h1 a {
-    background: url('./assets/ENGIN-logo.svg') no-repeat !important;
+    background: url('../assets/ENGIN-logo.svg') no-repeat !important;
 }
 
 #vubrandbar {
