@@ -1,5 +1,4 @@
-import { h, Component } from 'preact';
-import ReconnectingWebSocket from 'reconnecting-websocket';
+import { h } from 'preact';
 
 const Hours = () => (
     <table>
@@ -45,25 +44,10 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
     </div>
 );
 
-export default class SidebarSection extends Component {
-    state = { signData: {} };
-
-    componentDidMount() {
-        const socket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
-        socket.onmessage = ({ data }) =>
-            this.setState({ signData: JSON.parse(data) });
-    }
-
-    render() {
-        const { signData } = this.state;
-        return (
-            <div>
-                {(signData.title || signData.subtitle) && (
-                    <StatusSign {...signData} />
-                )}
-                <Hours />
-                <p>We are closed during all school holidays and breaks.</p>
-            </div>
-        );
-    }
-}
+export default ({ signData }) => (
+    <div>
+        {signData && <StatusSign {...signData} />}
+        <Hours />
+        <p>We are closed during all school holidays and breaks.</p>
+    </div>
+);
