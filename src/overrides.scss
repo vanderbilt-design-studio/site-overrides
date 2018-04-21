@@ -18,6 +18,14 @@
     background: url('../assets/DSHeader.svg');
 }
 
+/* Email obfuscation */
+.obfus-text {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	user-select: none;
+	font-weight: bold;
+}
+
 /* Fix VU template responsiveness overflow */
 @media only screen and (max-width: 768px) {
     html,
