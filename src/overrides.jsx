@@ -21,14 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastSignData = undefined;
     let lastPrinterData = undefined;
     const renderSidebar = (signData, printerData) => {
-        if (signData && printerData) {
-            alert('Rendering with ' + signData + printerData);
-        }
+        const sidebarSectionProps = {...signData, ...printerData};
         render(
-            <SidebarSection {...signData} {...printerData} />,
+            <SidebarSection {...sidebarSectionProps} />,
             sidebarWidget,
             sidebarWidget.lastChild
-        )
+        );
     };
     renderSidebar();
 
