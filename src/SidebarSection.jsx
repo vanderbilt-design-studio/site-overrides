@@ -46,7 +46,14 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
 
 const PrinterStatus = printers => {
     alert('Rendering printers!')
-    const printer_tiles = Array.from(printers).sort().map(printer => (<div className="tile">
+    const printer_tiles = Array.new(printers).sort((a, b) => {
+        if (a.name > b.name) {
+            return 1;
+        } else if (a.name < b.name) {
+            return -1;
+        }
+        return 0;
+    }).map(printer => (<div className="tile">
         <img src='../assets/ultimaker-3-1@3x.png' />
         <div class="name">{printer.name}</div>
         <div class="status">{printer.status}</div>
