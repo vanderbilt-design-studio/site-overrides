@@ -55,7 +55,9 @@ const PrinterStatus = ({ printers }) => (
 );
 
 export default ({ signData, printerData }) => {
-    alert('Doing a little render...');
+    if (signData && printerData) {
+        alert('Doing a little render...' + JSON.stringify(signData) + JSON.stringify(printerData));
+    }
     return (
         <div>
             {signData && <StatusSign {...signData} />}
