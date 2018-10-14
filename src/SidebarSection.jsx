@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import ultimaker from '../assets/ultimaker-3-1@3x.png';
 
 const Hours = () => (
     <table>
@@ -53,11 +54,11 @@ const PrinterStatus = ({ printerData }) => {
             return -1;
         }
         return 0;
-    }).map(printer => printerTiles.push((<div className="tile">
-        <img class="ultimaker" />
+    }).map(printer => (<div className="tile">
+        <img src={ultimaker} />
         <div class="name">{printer.name}</div>
         <div class="status">{printer.status}</div>
-    </div>)));
+    </div>));
     alert('Rendering ' + printerTiles.length + ' printers');
     return (
         <div className="printer-status">
