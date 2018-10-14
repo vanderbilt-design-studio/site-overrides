@@ -44,10 +44,10 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
     </div>
 );
 
-const PrinterStatus = printers => {
+const PrinterStatus = ({printerData}) => {
 
     const printer_tiles = [];
-    Array.from(printers).sort((a, b) => {
+    Array.new(printerData).sort((a, b) => {
         if (a.name > b.name) {
             return 1;
         } else if (a.name < b.name) {
@@ -71,7 +71,7 @@ export default ({ signData, printerData }) => {
     return (
         <div>
             {signData && <StatusSign {...signData} />}
-            {printerData && <PrinterStatus {...printerData} />}
+            {printerData && <PrinterStatus printerData={printerData} />}
             <Hours />
             <p>We are closed during all school holidays and breaks.</p>
         </div>
