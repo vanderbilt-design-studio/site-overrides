@@ -18,11 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.getElementsByClassName('textwidget')[1]
     );
 
-    let lastData = undefined;
+    let lastSignData = undefined;
     let lastPrinterData = undefined;
-    const renderSidebar = (yunyuData, printerData) =>
+    const renderSidebar = (signData, printerData) =>
+        alert('Rendering with ' + signData + printerData);
         render(
-            <SidebarSection {...yunyuData} {...printerData} />,
+            <SidebarSection {...signData} {...printerData} />,
             sidebarWidget,
             sidebarWidget.lastChild
         );
@@ -30,12 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const socket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
     socket.onmessage = ({ data }) => {
-        lastData = JSON.parse(data);
-        renderSidebar(lastData, lastPrinterData);
+        lastSignData = JSON.parse(data);
+        renderSidebar(lastSignData, lastPrinterData);
     };
     const printer_socket = new ReconnectingWebSocket('wss://iot.vanderbilt.design');
     printer_socket.onmessage = ({ data }) => {
         lastPrinterData = JSON.parse(data);
-        renderSidebar(lastData, lastPrinterData);
+        renderSidebar(lastSignData, lastPrinterData);
     };
 });
