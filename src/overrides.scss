@@ -72,3 +72,11 @@
         font-size: 0.85em;
     }
 }
+
+.printer-status {
+    display: flex;
+    flex-flow: row wrap;
+    .tile {
+        max-width: inherit;
+    }
+}

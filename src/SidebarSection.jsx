@@ -44,9 +44,20 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
     </div>
 );
 
-export default ({ signData }) => (
+const PrinterStatus = ({ printers }) => (
+    <div className="printer-status">
+        {printers.sort().map(printer => <div className="tile">
+            <img src='../assets/ultimaker-3-1@3x.png' />
+            <div class="name">{printer.name}</div>
+            <div class="status">{printer.status}</div>
+        </div>)}
+    </div>
+);
+
+export default ({ signData, printerData }) => (
     <div>
         {signData && <StatusSign {...signData} />}
+        {printerData && <PrinterStatus {...printerData} />}
         <Hours />
         <p>We are closed during all school holidays and breaks.</p>
     </div>

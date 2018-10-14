@@ -17,13 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarWidget = clearNode(
         sidebar.getElementsByClassName('textwidget')[1]
     );
-    const renderSidebar = signData =>
+
+    let lastData = undefined;
+    let lastPrinterData = undefined;
+    const renderSidebar = () =>
         render(
-            <SidebarSection {...{ signData }} />,
+            <SidebarSection {...{ lastData }, { lastPrinterData }} />,
             sidebarWidget,
             sidebarWidget.lastChild
         );
     renderSidebar();
+
     const socket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
-    socket.onmessage = ({ data }) => renderSidebar(JSON.parse(data));
+    socket.onmessage = ({ data }) => {
+        lastData = JSON.parse(data);
+        renderSidebar();
+    };
+    const printer_socket = new ReconnectingWebSocket('wss://iot.vanderbilt.design');
+    printer_socket.onmessage = ({ data }) => {
+        lastPrinterData = JSON.parse(data);
+        renderSidebar();
+    };
 });
