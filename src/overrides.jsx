@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const socket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
     socket.onmessage = ({ data }) => {
         lastData = JSON.parse(data);
-        alert('here2' + lastData.toString());
+        alert('here2' + data);
         renderSidebar(lastData, lastPrinterData);
     };
     const printer_socket = new ReconnectingWebSocket('wss://iot.vanderbilt.design');
     printer_socket.onmessage = ({ data }) => {
         lastPrinterData = JSON.parse(data);
-        alert('here1' + lastData.toString());
+        alert('here1' + data);
         renderSidebar(lastData, lastPrinterData);
     };
 });
