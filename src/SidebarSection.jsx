@@ -55,7 +55,7 @@ const PrinterStatus = ({ printerData }) => {
         }
         return 0;
     }).map(printer => (<div className="tile">
-        <img src={ultimaker} />
+        <img src={'https://design-studio.netlify.com/' + ultimaker} />
         <div class="name">{printer.name}</div>
         <div class="status">{printer.status}</div>
     </div>));
