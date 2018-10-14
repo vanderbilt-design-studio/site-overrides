@@ -46,23 +46,22 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
 
 const PrinterStatus = ({ printerData }) => {
 
-    const printer_tiles = [];
-    Array.from(printerData).sort((a, b) => {
+    const printerTiles = Array.from(printerData).sort((a, b) => {
         if (a.name > b.name) {
             return 1;
         } else if (a.name < b.name) {
             return -1;
         }
         return 0;
-    }).forEach(printer => printer_tiles.push((<div className="tile">
-        <img src="/ultimaker-3-1@3x.png" />
+    }).map(printer => printerTiles.push((<div className="tile">
+        <img class="ultimaker" />
         <div class="name">{printer.name}</div>
         <div class="status">{printer.status}</div>
     </div>)));
-    alert('Rendering ' + printer_tiles.length + ' printers');
+    alert('Rendering ' + printerTiles.length + ' printers');
     return (
         <div className="printer-status">
-            {printer_tiles}
+            {printerTiles}
         </div>
     );
 };
