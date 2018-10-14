@@ -46,11 +46,11 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
 
 const PrinterStatus = printers => (
     <div className="printer-status">
-        {Array.from(printers).sort().map(printer => <div className="tile">
+        {Array.from(printers).sort().map(printer => (<div className="tile">
             <img src='../assets/ultimaker-3-1@3x.png' />
             <div class="name">{printer.name}</div>
             <div class="status">{printer.status}</div>
-        </div>)}
+        </div>))}
     </div>
 );
 
