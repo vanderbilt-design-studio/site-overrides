@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <SidebarSection {...signData} {...printerData} />,
             sidebarWidget,
             sidebarWidget.lastChild
-        );
+        )
+    };
     renderSidebar();
 
     const socket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
