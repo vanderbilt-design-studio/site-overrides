@@ -45,7 +45,6 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
 );
 
 const PrinterStatus = printers => {
-    alert('Rendering printers!');
 
     const printer_tiles = [];
     Array.from(printers).sort((a, b) => {
@@ -55,11 +54,12 @@ const PrinterStatus = printers => {
             return -1;
         }
         return 0;
-    }).forEach(printer => printer_tiles.push(<div className="tile">
+    }).forEach(printer => printer_tiles.push((<div className="tile">
         <img src='../assets/ultimaker-3-1@3x.png' />
         <div class="name">{printer.name}</div>
         <div class="status">{printer.status}</div>
-    </div>));
+    </div>)));
+    alert('Rendering ' + printer_tiles.length + ' printers!');
     return (
         <div className="printer-status">
             {printer_tiles}
