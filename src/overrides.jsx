@@ -20,8 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let lastSignData = undefined;
     let lastPrinterData = undefined;
-    const renderSidebar = (signData, printerData) =>
-        alert('Rendering with ' + signData + printerData);
+    const renderSidebar = (signData, printerData) => {
+        if (signData && printerData) {
+            alert('Rendering with ' + signData + printerData);
+        }
         render(
             <SidebarSection {...signData} {...printerData} />,
             sidebarWidget,
