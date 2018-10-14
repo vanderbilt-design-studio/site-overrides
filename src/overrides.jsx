@@ -18,12 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.getElementsByClassName('textwidget')[1]
     );
 
-    let lastSignData = undefined;
-    let lastPrinterData = undefined;
+    let lastSignData = null;
+    let lastPrinterData = null;
     const renderSidebar = (signData, printerData) => {
-        const sidebarSectionProps = {...signData, ...printerData};
         render(
-            <SidebarSection {...sidebarSectionProps} />,
+            <SidebarSection signData={signData} printerData={printerData} />,
             sidebarWidget,
             sidebarWidget.lastChild
         );
