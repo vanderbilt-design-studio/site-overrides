@@ -13,7 +13,7 @@
         "reconnecting-websocket": "^3.2.2"
     },
     "scripts": {
-        "build": "parcel build --public-url ./ src/overrides.jsx",
+        "build": "parcel build --public-url  https://design-studio.netlify.com/ src/overrides.jsx",
         "dev": "parcel src/overrides.jsx"
     }
 }
