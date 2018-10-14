@@ -55,7 +55,7 @@ const PrinterStatus = ({ printerData }) => {
         }
         return 0;
     }).forEach(printer => printer_tiles.push((<div className="tile">
-        <img src='../assets/ultimaker-3-1@3x.png' />
+        <img src="/ultimaker-3-1@3x.png" />
         <div class="name">{printer.name}</div>
         <div class="status">{printer.status}</div>
     </div>)));
