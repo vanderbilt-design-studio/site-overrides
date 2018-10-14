@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastPrinterData = undefined;
     const renderSidebar = () =>
         render(
-            <SidebarSection {...[lastData, lastPrinterData]} />,
+            <SidebarSection {...lastData} {...lastPrinterData} />,
             sidebarWidget,
             sidebarWidget.lastChild
         );
