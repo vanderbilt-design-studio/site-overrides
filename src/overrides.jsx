@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastData = undefined;
     let lastPrinterData = undefined;
     const renderSidebar = (data, printerData) =>
-        alert('Rendering!');
         render(
             <SidebarSection {...data} {...printerData} />,
             sidebarWidget,
@@ -31,11 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const socket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
     socket.onmessage = ({ data }) => {
+        alert('here2');
         lastData = JSON.parse(data);
         renderSidebar(lastData, lastPrinterData);
     };
     const printer_socket = new ReconnectingWebSocket('wss://iot.vanderbilt.design');
     printer_socket.onmessage = ({ data }) => {
+        alert('here1');
         lastPrinterData = JSON.parse(data);
         renderSidebar(lastData, lastPrinterData);
     };
