@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let lastData = undefined;
     let lastPrinterData = undefined;
-    const renderSidebar = (data, printerData) =>
+    const renderSidebar = (yunyuData, printerData) =>
         render(
-            <SidebarSection {...data} {...printerData} />,
+            <SidebarSection {...yunyuData} {...printerData} />,
             sidebarWidget,
             sidebarWidget.lastChild
         );
@@ -31,13 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const socket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
     socket.onmessage = ({ data }) => {
         lastData = JSON.parse(data);
-        alert('here2' + data);
         renderSidebar(lastData, lastPrinterData);
     };
     const printer_socket = new ReconnectingWebSocket('wss://iot.vanderbilt.design');
     printer_socket.onmessage = ({ data }) => {
         lastPrinterData = JSON.parse(data);
-        alert('here1' + data);
         renderSidebar(lastData, lastPrinterData);
     };
 });
