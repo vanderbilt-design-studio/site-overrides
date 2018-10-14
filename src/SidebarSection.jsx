@@ -44,10 +44,10 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
     </div>
 );
 
-const PrinterStatus = ({printerData}) => {
+const PrinterStatus = ({ printerData }) => {
 
     const printer_tiles = [];
-    Array.new(printerData).sort((a, b) => {
+    Array.from(printerData).sort((a, b) => {
         if (a.name > b.name) {
             return 1;
         } else if (a.name < b.name) {
