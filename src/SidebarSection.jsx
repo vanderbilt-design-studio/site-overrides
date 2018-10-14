@@ -59,7 +59,7 @@ const PrinterStatus = ({ printerData }) => {
         <div class="name">{printer.name}</div>
         <div class="status">{printer.status}</div>
     </div>)));
-    alert('Rendering ' + printer_tiles.length + ' printers when there should have been ' + printers.length);
+    alert('Rendering ' + printer_tiles.length + ' printers');
     return (
         <div className="printer-status">
             {printer_tiles}
