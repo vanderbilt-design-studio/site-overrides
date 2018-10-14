@@ -44,7 +44,7 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
     </div>
 );
 
-const PrinterStatus = ({ printers }) => (
+const PrinterStatus = printers => (
     <div className="printer-status">
         {printers.sort().map(printer => <div className="tile">
             <img src='../assets/ultimaker-3-1@3x.png' />
