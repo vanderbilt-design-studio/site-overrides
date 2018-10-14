@@ -59,7 +59,7 @@ const PrinterStatus = printers => {
         <div class="name">{printer.name}</div>
         <div class="status">{printer.status}</div>
     </div>)));
-    alert('Rendering ' + printer_tiles.length + ' printers!');
+    alert('Rendering ' + printer_tiles.length + ' printers when there should have been ' + printers.length);
     return (
         <div className="printer-status">
             {printer_tiles}
@@ -68,9 +68,6 @@ const PrinterStatus = printers => {
 };
 
 export default ({ signData, printerData }) => {
-    if (printerData) {
-        alert('printerData:' + JSON.stringify(printerData));
-    }
     return (
         <div>
             {signData && <StatusSign {...signData} />}
