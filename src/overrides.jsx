@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastData = undefined;
     let lastPrinterData = undefined;
     const renderSidebar = (data, printerData) =>
-        alert('Rendering with ' + data + printerData);
+        alert('Rendering!');
         render(
             <SidebarSection {...data} {...printerData} />,
             sidebarWidget,
