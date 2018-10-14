@@ -44,20 +44,21 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
     </div>
 );
 
-const PrinterStatus = printers => (
-    <div className="printer-status">
-        {Array.from(printers).sort().map(printer => (<div className="tile">
-            <img src='../assets/ultimaker-3-1@3x.png' />
-            <div class="name">{printer.name}</div>
-            <div class="status">{printer.status}</div>
-        </div>))}
-    </div>
-);
+const PrinterStatus = printers => {
+    alert('Rendering printers!')
+    const printer_tiles = Array.from(printers).sort().map(printer => (<div className="tile">
+        <img src='../assets/ultimaker-3-1@3x.png' />
+        <div class="name">{printer.name}</div>
+        <div class="status">{printer.status}</div>
+    </div>));
+    return (
+        <div className="printer-status">
+            {printer_tiles}
+        </div>
+    );
+};
 
 export default ({ signData, printerData }) => {
-    if (signData) {
-        alert('signData:' + JSON.stringify(signData));
-    }
     if (printerData) {
         alert('printerData:' + JSON.stringify(printerData));
     }
