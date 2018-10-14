@@ -54,11 +54,14 @@ const PrinterStatus = ({ printers }) => (
     </div>
 );
 
-export default ({ signData, printerData }) => (
-    <div>
-        {signData && <StatusSign {...signData} />}
-        {printerData && <PrinterStatus {...printerData} />}
-        <Hours />
-        <p>We are closed during all school holidays and breaks.</p>
-    </div>
-);
+export default ({ signData, printerData }) => {
+    alert('Doing a little render...');
+    return (
+        <div>
+            {signData && <StatusSign {...signData} />}
+            {printerData && <PrinterStatus {...printerData} />}
+            <Hours />
+            <p>We are closed during all school holidays and breaks.</p>
+        </div>
+    );
+};
