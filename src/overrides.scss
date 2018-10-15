@@ -80,5 +80,9 @@
     flex-flow: row wrap;
     .tile {
         max-width: 100%;
+        .name {
+            font-weight: bold;
+            text-align: center;
+        }
     }
 }
