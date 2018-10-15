@@ -45,33 +45,28 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
     </div>
 );
 
-const PrinterStatus = ({ printerData }) => {
-
-    const printerTiles = Array.from(printerData).sort((a, b) => {
-        if (a.name > b.name) {
-            return 1;
-        } else if (a.name < b.name) {
-            return -1;
-        }
-        return 0;
-    }).map(printer => (<div className="tile">
-        <img class="printer" src={ultimaker} />
-        <div class="desc"></div><span class="name">{printer.name}</span>: <span class="status">{printer.status}</span></div>
-    ));
-    return (
-        <div className="printer-status">
-            {printerTiles}
+const PrinterStatus = ({ printerData }) => (
+    <div className="printer-status">
+        {Array.from(printerData).sort((a, b) => {
+            if (a.name > b.name) {
+                return 1;
+            } else if (a.name < b.name) {
+                return -1;
+            }
+            return 0;
+        }).map(printer => (<div className="tile">
+            <img class="printer" src={ultimaker} />
+            <div class="desc"><span class="name">{printer.name}</span>: <span class="status">{printer.status}</span></div>
         </div>
-    );
-};
+        ))}
+    </div>
+);
 
-export default ({ signData, printerData }) => {
-    return (
-        <div>
-            {signData && <StatusSign {...signData} />}
-            {printerData && <PrinterStatus printerData={printerData} />}
-            <Hours />
-            <p>We are closed during all school holidays and breaks.</p>
-        </div>
-    );
-};
+export default ({ signData, printerData }) => (
+    <div>
+        {signData && <StatusSign {...signData} />}
+        {printerData && <PrinterStatus printerData={printerData} />}
+        <Hours />
+        <p>We are closed during all school holidays and breaks.</p>
+    </div>
+);
