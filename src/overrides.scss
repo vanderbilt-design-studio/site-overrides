@@ -74,9 +74,11 @@
 }
 
 .printer-status {
+    margin: 10px 15px;
+    padding: 5px;
     display: flex;
     flex-flow: row wrap;
     .tile {
-        max-width: inherit;
+        max-width: 100%;
     }
 }
