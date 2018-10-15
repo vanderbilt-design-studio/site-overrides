@@ -37,7 +37,7 @@ const Hours = () => (
 );
 
 const StatusSign = ({ bgColor, title, subtitle }) => (
-    <div className="status-sign" style={{ backgroundColor: bgColor || '#777' }}>
+    <div class="status-sign" style={{ backgroundColor: bgColor || '#777' }}>
         <div class="sign-text">
             <div class="title">{title}</div>
             <div class="subtitle">{subtitle}</div>
@@ -46,19 +46,25 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
 );
 
 const PrinterStatus = ({ printerData }) => (
-    <div className="printer-status">
-        {Array.from(printerData).sort((a, b) => {
-            if (a.name > b.name) {
-                return 1;
-            } else if (a.name < b.name) {
-                return -1;
-            }
-            return 0;
-        }).map(printer => (<div className="tile">
-            <img class="printer" src={ultimaker} />
-            <div class="desc"><span class="name">{printer.name}</span>: <span class="status">{printer.status}</span></div>
-        </div>
-        ))}
+    <div class="printer-status">
+        {[...printerData]
+            .sort((a, b) => {
+                if (a.name > b.name) {
+                    return 1;
+                } else if (a.name < b.name) {
+                    return -1;
+                }
+                return 0;
+            })
+            .map(({ name, status }) => (
+                <div class="tile" key={name}>
+                    <img class="printer" src={ultimaker} />
+                    <div class="desc">
+                        <span class="name">{name}</span>:{' '}
+                        <span class="status">{status}</span>
+                    </div>
+                </div>
+            ))}
     </div>
 );
 

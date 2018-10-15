@@ -20,10 +20,10 @@
 
 /* Email obfuscation */
 .obfus-text {
-	unicode-bidi: bidi-override;
-	direction: rtl;
-	user-select: none;
-	font-weight: bold;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    user-select: none;
+    font-weight: bold;
 }
 
 /* Fix VU template responsiveness overflow */
