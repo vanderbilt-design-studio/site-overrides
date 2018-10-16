@@ -82,8 +82,11 @@
         .printer {
             max-width: 100%;
         }
-        .desc {
+        .title {
             font-weight: bold;
+            text-align: center;
+        }
+        .desc {
             text-align: center;
         }
     }
