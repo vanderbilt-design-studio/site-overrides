@@ -37,7 +37,7 @@ const Hours = () => (
 );
 
 const StatusSign = ({ bgColor, title, subtitle }) => (
-    <div className="status-sign" style={{ backgroundColor: bgColor || '#777' }}>
+    <div class="status-sign" style={{ backgroundColor: bgColor || '#777' }}>
         <div class="sign-text">
             <div class="title">{title}</div>
             <div class="subtitle">{subtitle}</div>
