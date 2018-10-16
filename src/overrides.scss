@@ -79,6 +79,7 @@
     display: flex;
     flex-flow: row wrap;
     .tile {
+        background-image: url('../assets/ultimaker-3-1@3x.png') no-repeat;
         .printer {
             max-width: 100%;
         }
@@ -88,6 +89,9 @@
         }
         .desc {
             text-align: center;
+        }
+        .status {
+            font-style: italic;
         }
     }
 }
