@@ -55,12 +55,12 @@ const PrinterStatus = ({ printerData }) => (
             }
             return 0;
         }).map(printer => (<div className="tile">
-            {/* <img class="printer" src={ultimaker} /> */}
-            <div class="title">
-                <span class="name">{printer.system.name}</span><br />
-                <span class="status">{printer.printer.status}</span>
+            <img class="printer" src={ultimaker} />
+            <div class="detail">
+                <h2 class="name">{printer.system.name}</h2>
+                <h3 class="status">{printer.printer.status}</h3>
+                {printer.print_job && <div class="time"><span>{printer.print_job.time_elapsed}</span> out of <span>{printer.print_job.time_total}</span></div>}
             </div>
-            {printer.print_job && <div class="desc"><span>{printer.print_job.time_elapsed}</span>/<span>{printer.print_job.time_total}</span></div>}
         </div>
         ))}
     </div>

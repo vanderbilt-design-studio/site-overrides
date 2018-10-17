@@ -77,18 +77,24 @@
     margin: 10px 15px;
     padding: 5px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
+    align-items: center;
     .tile {
-        background-image: url('../assets/ultimaker-3-1@3x.png') no-repeat;
         .printer {
             max-width: 100%;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
         }
-        .title {
-            font-weight: bold;
+        .detail {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
         }
-        .desc {
-            text-align: center;
+        .name {
+        }
+        .time {
         }
         .status {
             font-style: italic;
