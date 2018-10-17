@@ -92,7 +92,6 @@
             left: 50%;
             transform: translate(-50%, -60%);
             text-align: center;
-            color: black !important;
             text-shadow: white 1px 1px;
             .name {
                 margin-bottom: 0em;
@@ -101,9 +100,11 @@
                 color: black !important;
             }
             .time {
+                color: black !important;
                 font-weight: bold;
             }
             .status {
+                color: black !important;
                 margin-bottom: 0em;
             }
         }
