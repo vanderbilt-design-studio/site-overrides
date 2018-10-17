@@ -58,7 +58,7 @@ const PrinterStatus = ({ printerData }) => (
             <img class="printer" src={ultimaker} />
             <div class="detail">
                 <h2 class="name">{printer.system.name}</h2>
-                <h3 class="status">{printer.printer.status}</h3>
+                <h3 class="status">{printer.printer.status + (printer.print_job && (': ' + printer.print_job.state))}</h3>
                 {printer.print_job && <div class="time"><span>{printer.print_job.time_elapsed}</span> out of <span>{printer.print_job.time_total}</span></div>}
             </div>
         </div>
