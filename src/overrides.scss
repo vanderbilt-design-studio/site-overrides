@@ -96,8 +96,9 @@
             text-shadow: white 1px 1px;
             .name {
                 margin-bottom: 0em;
-                background: none;
-                border: none;
+                background: none !important;
+                border: none !important;
+                color: black !important;
             }
             .time {
                 font-weight: bold;
