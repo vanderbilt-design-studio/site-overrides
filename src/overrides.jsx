@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSidebar();
     };
 
-    const navbar = document.getElementById('nav');
+    const navbar = document.getElementById('sitenav');
     if (navbar.firstChild.classList.contains('current_page_item')) {
         const contentSection = document.getElementById('seccontent');
         const mainSection = content.getElementsByClassName('secmain')[0];
