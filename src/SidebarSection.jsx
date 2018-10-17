@@ -46,20 +46,24 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
 );
 
 const PrinterStatus = ({ printerData }) => (
-    <div className="printer-status">
-        {Array.from(printerData).sort((a, b) => {
+    <div class="printer-status">
+        {[...printerData].sort((a, b) => {
             if (a.system.name > b.system.name) {
                 return 1;
             } else if (a.system.name < b.system.name) {
                 return -1;
             }
             return 0;
-        }).map(printer => (<div className="tile">
+        }).map(({ system, printer, print_job }) => (<div class="tile">
             <img class="printer" src={ultimaker} />
             <div class="detail">
-                <h2 class="name">{printer.system.name}</h2>
-                <h3 class="status">{printer.printer.status + ((printer.print_job && printer.print_job.state !== 'printing' && (': ' + printer.print_job.state)) || '')}</h3>
-                {printer.print_job && <div class="time"><span>{printer.print_job.time_elapsed}</span> out of <span>{printer.print_job.time_total}</span></div>}
+                <h2 class="name">{system.name}</h2>
+                <h3 class="status">{printer.status + ((print_job && print_job.state !== 'printing' && (': ' + print_job.state)) || '')}</h3>
+                {print_job &&
+                    <div class="time">
+                        <span>{print_job.time_elapsed}</span> out of <span>{print_job.time_total}</span>
+                    </div>
+                }
             </div>
         </div>
         ))}
