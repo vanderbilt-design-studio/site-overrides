@@ -92,14 +92,14 @@
             left: 50%;
             transform: translate(-50%, -60%);
             text-align: center;
-        }
-        .name {
-            margin-bottom: 0em;
-        }
-        .time {
-            font-weight: bold;
-        }
-        .status {
+            text-shadow: white 1px 1px;
+            .name {
+                margin-bottom: 0em;
+            }
+            .time {
+                font-weight: bold;
+            }
+            .status {}
         }
     }
     :last-child {
