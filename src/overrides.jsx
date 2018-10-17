@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navbar.firstChild.classList.contains('current_page_item')) {
         const contentSection = document.getElementById('seccontent');
         const mainSection = contentSection.getElementsByClassName('secmain')[0];
-        const printerFooter = mainSection.appendChild(<div></div>);
+        const printerFooter = mainSection.appendChild(document.createElement('div'));
 
         const renderFooter = () => {
-            render(<PrinterFooter {...state} />, main, printerFooter);
+            render(<PrinterFooter {...state} />, mainSection, printerFooter);
         };
         renderFooter();
 

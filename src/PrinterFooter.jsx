@@ -1,3 +1,4 @@
+import { h } from 'preact';
 import ultimaker from '../assets/ultimaker-3-1@3x.png';
 
 export default ({ printerData }) => (
