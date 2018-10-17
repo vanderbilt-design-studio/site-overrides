@@ -4,6 +4,7 @@ import clearNode from './util/clear-node';
 
 import './overrides.scss';
 import SidebarSection from './SidebarSection.jsx';
+import PrinterFooter from './PrinterFooter.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementsByClassName('graphicheader')[0];
@@ -35,11 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSidebar();
     };
 
-    const printerSocket = new ReconnectingWebSocket(
-        'wss://iot.vanderbilt.design'
-    );
-    printerSocket.onmessage = ({ data }) => {
-        state = { ...state, printerData: JSON.parse(data) };
-        renderSidebar();
-    };
+    const navbar = document.getElementById('nav');
+    if (navbar.firstChild.classList.contains('current_page_item')) {
+        const contentSection = document.getElementById('seccontent');
+        const mainSection = content.getElementsByClassName('secmain')[0];
+        const printerFooter = main.appendChild(<div></div>);
+
+        const renderFooter = () => {
+            render(<PrinterFooter {...state} />, main, printerFooter);
+        };
+        renderFooter();
+
+        const printerSocket = new ReconnectingWebSocket(
+            'wss://iot.vanderbilt.design'
+        );
+        printerSocket.onmessage = ({ data }) => {
+            state = { ...state, printerData: JSON.parse(data) };
+            renderFooter();
+        };
+    }
 });

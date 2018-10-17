@@ -77,8 +77,8 @@
     margin: 10px 15px;
     padding: 5px;
     display: flex;
-    flex-flow: column;
-    place-content: start center;
+    flex-flow: row wrap;
+    place-content: center start;
     .tile {
         position: relative;
         margin-bottom: 1em;
