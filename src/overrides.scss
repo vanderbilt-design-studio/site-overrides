@@ -78,8 +78,9 @@
     padding: 5px;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    place-content: start center;
     .tile {
+        position: relative;
         .printer {
             max-width: 100%;
             opacity: 0.5;
