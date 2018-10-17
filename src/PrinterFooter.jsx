@@ -3,7 +3,7 @@ import ultimaker from '../assets/ultimaker-3-1@3x.png';
 
 export default ({ printerData }) => (
     <div class="printer-status">
-        {[...printerData].sort((a, b) => {
+        {printerData && [...printerData].sort((a, b) => {
             if (a.system.name > b.system.name) {
                 return 1;
             } else if (a.system.name < b.system.name) {
