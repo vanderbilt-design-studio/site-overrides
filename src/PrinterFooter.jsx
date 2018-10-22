@@ -11,7 +11,7 @@ export default ({ printerData }) => (
             }
             return 0;
         }).map(({ system, printer, print_job }) => (<div class="tile">
-            <img class="printer" src={ultimaker} />
+            <img class="printer" src={ultimaker} draggable={false} />
             <div class="detail">
                 <h2 class="name">{system.name}</h2>
                 <h3 class="status">{printer.status + ((print_job && print_job.state !== 'printing' && (': ' + print_job.state)) || '')}</h3>
