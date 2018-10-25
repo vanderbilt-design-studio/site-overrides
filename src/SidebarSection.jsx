@@ -44,7 +44,6 @@ const StatusSign = ({ bgColor, title, subtitle }) => (
     </div>
 );
 
-
 export default ({ signData }) => (
     <div>
         {signData && <StatusSign {...signData} />}

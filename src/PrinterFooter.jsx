@@ -29,20 +29,29 @@ const formatStatus = (printer, print_job) => {
 
 export default ({ printerData }) => (
     <div class="printer-status">
-        {printerData && [...printerData].sort((a, b) =>
-            a.system.name.localeCompare(b.system.name)
-        ).map(({ system, printer, print_job }) => (<div class="tile">
-            <img class="printer" src={ultimaker} draggable={false} />
-            <div class="detail">
-                <h2 class="name">{system.name}</h2>
-                <h3 class="status">{formatStatus(printer, print_job)}</h3>
-                {print_job &&
-                    <div class="time">
-                        <span>{print_job.time_elapsed}</span> out of <span>{print_job.time_total}</span>
+        {printerData &&
+            [...printerData]
+                .sort((a, b) => a.system.name.localeCompare(b.system.name))
+                .map(({ system, printer, print_job }) => (
+                    <div class="tile">
+                        <img
+                            class="printer"
+                            src={ultimaker}
+                            draggable={false}
+                        />
+                        <div class="detail">
+                            <h2 class="name">{system.name}</h2>
+                            <h3 class="status">
+                                {formatStatus(printer, print_job)}
+                            </h3>
+                            {print_job && (
+                                <div class="time">
+                                    <span>{print_job.time_elapsed}</span> out of{' '}
+                                    <span>{print_job.time_total}</span>
+                                </div>
+                            )}
+                        </div>
                     </div>
-                }
-            </div>
-        </div>
-        ))}
+                ))}
     </div>
 );
