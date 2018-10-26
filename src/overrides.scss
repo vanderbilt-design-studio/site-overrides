@@ -12,10 +12,10 @@
     }
 }
 
-.header-background {
-    background: url('../assets/DSHeader.svg') no-repeat center !important;
-    background-size: contain !important;
-    top: -35px !important;
+.livetextheader .header-image {
+    width: 950px;
+    height: 100px;
+    background: url('../assets/DSHeader.svg');
 }
 
 /* Email obfuscation */
