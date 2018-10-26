@@ -6,11 +6,6 @@ import './overrides.scss';
 import SidebarSection from './SidebarSection.jsx';
 import PrinterFooter from './PrinterFooter.jsx';
 
-const head = document.getElementsByTagName('head')[0];
-const scripts = head.getElementsByTagName('script');
-head.removeChild(scripts[3]);
-head.removeChild(scripts[4]);
-
 document.addEventListener('DOMContentLoaded', () => {
     const headerLink = document.getElementsByClassName('livetextheader')[0];
     render(<div className="header-image" />, clearNode(headerLink));
