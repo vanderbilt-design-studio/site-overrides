@@ -7,6 +7,11 @@ import SidebarSection from './SidebarSection.jsx';
 import PrinterFooter from './PrinterFooter.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const head = document.getElementsByTagName('head')[0];
+    const scripts = head.getElementsByTagName('script');
+    head.removeChild(scripts[3]);
+    head.removeChild(scripts[4]);
+
     const headerLink = document.getElementsByClassName('livetextheader')[0];
     render(<div className="header-image" />, clearNode(headerLink));
 
@@ -37,8 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navbar = document.getElementById('sitenav');
     if (navbar.firstChild.classList.contains('current_page_item')) {
-        const primaryContent = document.getElementsByClassName('primary-content')[0];
-        const panelBody = primaryContent.getElementsByClassName('panel-body')[0];
+        const primaryContent = document.getElementsByClassName(
+            'primary-content'
+        )[0];
+        const panelBody = primaryContent.getElementsByClassName(
+            'panel-body'
+        )[0];
         const printerFooter = panelBody.appendChild(
             document.createElement('div')
         );
