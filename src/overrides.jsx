@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navbar = document.getElementById('sitenav');
     if (navbar.firstChild.classList.contains('current_page_item')) {
-        const contentSection = document.getElementById('seccontent');
-        const primaryContent = contentSection.getElementsByClassName('primary-content')[0];
+        const primaryContent = document.getElementsByClassName('primary-content')[0];
         const panelBody = primaryContent.getElementsByClassName('panel-body')[0];
         const printerFooter = panelBody.appendChild(
             document.createElement('div')
