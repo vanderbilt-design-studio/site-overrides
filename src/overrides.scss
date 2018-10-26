@@ -11,11 +11,13 @@
         }
     }
 }
+.livetextheader {
+    margin: auto !important;
+}
 
 .livetextheader .header-image {
-    width: 950px;
     height: 100px;
-    background: url('../assets/DSHeader.svg');
+    background: url('../assets/DSHeader.svg') center no-repeat;
 }
 
 .header-background {
