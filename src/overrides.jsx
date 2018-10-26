@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         const renderFooter = () => {
-            render(<PrinterFooter {...state} />, mainSection, printerFooter);
+            render(<PrinterFooter {...state} />, panelBody, printerFooter);
         };
         renderFooter();
 
