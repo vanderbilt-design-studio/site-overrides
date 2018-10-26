@@ -16,8 +16,9 @@
 }
 
 .livetextheader .header-image {
-    height: 10vh;
+    height: 7vw;
     background: url('../assets/DSHeader.svg') center no-repeat;
+    background-size: cover;
 }
 
 .header-background {
@@ -25,6 +26,10 @@
     margin-bottom: 0px !important;
     top: 0px !important;
     position: unset !important;
+}
+
+.vu-main-content {
+    padding-top: 0em !important;
 }
 
 /* Email obfuscation */
