@@ -12,10 +12,8 @@
     }
 }
 
-.livetextheader .header-image {
-    width: 950px;
-    height: 100px;
-    background: url('../assets/DSHeader.svg');
+.header-background {
+    background: url('../assets/DSHeader.svg') no-repeat center !important;
 }
 
 /* Email obfuscation */

@@ -7,8 +7,8 @@ import SidebarSection from './SidebarSection.jsx';
 import PrinterFooter from './PrinterFooter.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const headerLink = document.getElementsByClassName('livetextheader')[0];
-    render(<div className="header-image" />, clearNode(headerLink));
+    // const headerLink = document.getElementsByClassName('livetextheader')[0];
+    // render(<div className="header-image" />, clearNode(headerLink));
 
     const sidebar = document.getElementById('sidebar__right');
     const hoursTitle = clearNode(sidebar.getElementsByTagName('h4')[1]);
