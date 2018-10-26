@@ -18,6 +18,10 @@
     background: url('../assets/DSHeader.svg');
 }
 
+.header-background {
+    background: none !important;
+}
+
 /* Email obfuscation */
 .obfus-text {
     unicode-bidi: bidi-override;
