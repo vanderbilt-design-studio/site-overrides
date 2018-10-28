@@ -5,10 +5,14 @@ import clearNode from './util/clear-node';
 import './overrides.scss';
 import SidebarSection from './SidebarSection.jsx';
 import PrinterFooter from './PrinterFooter.jsx';
+import DSHeader from '../assets/DSHeader.svg';
 
 document.addEventListener('DOMContentLoaded', () => {
     const headerLink = document.getElementsByClassName('livetextheader')[0];
-    render(<div className="header-image" />, clearNode(headerLink));
+    render(
+        <img src={DSHeader} className={'header-image'} />,
+        clearNode(headerLink)
+    );
 
     const sidebar = document.getElementById('sidebar__right');
     const hoursTitle = clearNode(sidebar.getElementsByTagName('h4')[1]);
