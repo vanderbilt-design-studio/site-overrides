@@ -15,7 +15,8 @@
     margin: auto !important;
 }
 
-.livetextheader .header-image img {
+.livetextheader .header-image {
+    display: inherit !important;
 }
 
 .header-background {
