@@ -89,10 +89,11 @@
     margin: 10px 15px;
     padding: 5px;
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     place-content: space-evenly start;
     .tile {
         position: relative;
+        flex-basis: 200px;
         .printer {
             max-width: 100%;
             filter: opacity(50%);
