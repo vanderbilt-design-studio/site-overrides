@@ -1,7 +1,7 @@
 import { h } from 'preact';
 
 const Hours = () => (
-    <table>
+    <table class="hours">
         <tbody>
             <tr>
                 <td>Monday</td>

@@ -65,6 +65,7 @@
     margin: 10px 15px;
     padding: 5px;
     height: 108px;
+    width: 192px;
     position: relative;
     font-weight: bold;
     text-align: center;
@@ -83,6 +84,10 @@
     .subtitle {
         font-size: 0.85em;
     }
+}
+
+.hours td:last-child {
+    padding-left: 15px;
 }
 
 .printer-status {
