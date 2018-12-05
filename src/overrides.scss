@@ -51,11 +51,19 @@
     display: none !important;
 }
 
+@mixin limit-to-size-where-ugly {
+    @media all and (min-width: 768px) and (max-width: 979px) {
+        @content;
+    }
+}
+
 .col-sm-3 {
+    @include limit-to-size-where-ugly();
     width: calc(100% / 3) !important;
 }
 
 .col-sm-9 {
+    @include limit-to-size-where-ugly();
     width: calc(100% / 3 * 2) !important;
 }
 
