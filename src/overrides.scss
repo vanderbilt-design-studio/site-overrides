@@ -60,12 +60,24 @@
     image-rendering: pixelated;
 }
 
+.vu-footer__map {
+    display: none !important;
+}
+
+.col-sm-3 {
+    width: calc(100% / 3) !important;
+}
+
+.col-sm-9 {
+    width: calc(100% / 3 * 2) !important;
+}
+
 .status-sign {
     color: #fff;
-    margin: 10px 15px;
+    margin: 10px 0px;
     padding: 5px;
     height: 108px;
-    width: 192px;
+    width: 200px;
     position: relative;
     font-weight: bold;
     text-align: center;
