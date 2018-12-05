@@ -1,16 +1,3 @@
-#secnav table {
-    padding: 5px 15px;
-
-    td {
-        font-weight: 300;
-        text-align: right;
-
-        &:first-child {
-            font-weight: bold;
-            text-align: initial;
-        }
-    }
-}
 .livetextheader {
     margin: auto !important;
 }
@@ -65,7 +52,7 @@
     margin: 10px 0;
     padding: 5px;
     height: 108px;
-    width: 200px;
+    width: 100%;
     position: relative;
     font-weight: bold;
     text-align: center;
@@ -87,12 +74,15 @@
 }
 
 .hours {
+    width: 100%;
+    margin: 10px 0;
+
     td:first-child {
         font-weight: bold;
     }
-    
+
     td:last-child {
-        padding-left: 15px;
+        text-align: right;
     }
 }
 
