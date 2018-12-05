@@ -62,10 +62,10 @@
 
 .status-sign {
     color: #fff;
-    margin: 10px 15px;
+    margin: 10px 0;
     padding: 5px;
     height: 108px;
-    width: 192px;
+    width: 200px;
     position: relative;
     font-weight: bold;
     text-align: center;
@@ -86,8 +86,14 @@
     }
 }
 
-.hours td:last-child {
-    padding-left: 15px;
+.hours {
+    td:first-child {
+        font-weight: bold;
+    }
+    
+    td:last-child {
+        padding-left: 15px;
+    }
 }
 
 .printer-status {
