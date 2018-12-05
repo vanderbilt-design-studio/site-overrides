@@ -47,10 +47,17 @@
     image-rendering: pixelated;
 }
 
+/* Get rid of ugly youtube video they plaster all over the bottom */
 .vu-footer__map {
     display: none !important;
 }
 
+/* Get rid of ExploreVU dropdown & Search bar */
+.vu-toolbar {
+    display: none !important;
+}
+
+/* Fix the hours sidebar widget wrapping the time ranges when the screen size is in this range */
 @media (min-width: 768px) and (max-width: 979px) {
     .col-sm-3 {
         width: calc(100% / 3) !important;
