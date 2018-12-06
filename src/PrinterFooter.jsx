@@ -46,7 +46,7 @@ export default ({ printerData }) => (
                                 </div>
                             )}
                             {camera && (
-                                <div>
+                                <div class="camera">
                                     <a href={'#' + system.name + '-lightbox'}>
                                         <img src={camera.snapshot} />
                                     </a>

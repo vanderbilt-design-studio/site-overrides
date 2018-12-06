@@ -125,6 +125,8 @@
             text-shadow: white 1px 1px;
             background-image: url('../assets/ultimaker-3-1@3x.png');
             background-size: cover;
+            height: 215px;
+
             .name {
                 margin-top: 0em !important;
                 margin-bottom: 0em !important;
@@ -141,6 +143,9 @@
                 color: black !important;
                 margin-top: 0em !important;
                 margin-bottom: 0em !important;
+            }
+            .camera {
+                max-width: 120px;
             }
 
             /** Thanks to Gregory Schier for the lightbox CSS below https://codepen.io/gschier/pen/HCoqh **/
