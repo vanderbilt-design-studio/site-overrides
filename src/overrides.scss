@@ -112,7 +112,7 @@
     padding: 5px;
     display: flex;
     flex-flow: row wrap;
-    place-content: space-evenly start;
+    place-content: space-evenly center;
     .tile {
         position: relative;
         flex-basis: 200px;

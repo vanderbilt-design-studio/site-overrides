@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import ultimaker from '../assets/ultimaker-3-1@3x.png';
 
-const formatState = (print_job) => {
+const formatState = print_job => {
     switch (print_job.state) {
         case 'wait_cleanup':
             // The name of this state is unclear; it seems to simply trigger
@@ -32,7 +32,7 @@ export default ({ printerData }) => (
         {printerData &&
             [...printerData]
                 .sort((a, b) => a.system.name.localeCompare(b.system.name))
-                .map(({ system, printer, print_job }) => (
+                .map(({ system, printer, print_job, camera }) => (
                     <div class="tile">
                         <img
                             class="printer"
@@ -50,6 +50,7 @@ export default ({ printerData }) => (
                                     <span>{print_job.time_total}</span>
                                 </div>
                             )}
+                            {camera && <img src={camera} />}
                         </div>
                     </div>
                 ))}
