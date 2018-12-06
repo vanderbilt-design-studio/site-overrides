@@ -34,11 +34,6 @@ export default ({ printerData }) => (
                 .sort((a, b) => a.system.name.localeCompare(b.system.name))
                 .map(({ system, printer, print_job, camera }) => (
                     <div class="tile">
-                        <img
-                            class="printer"
-                            src={ultimaker}
-                            draggable={false}
-                        />
                         <div class="detail">
                             <h2 class="name">{system.name}</h2>
                             <h3 class="status">
