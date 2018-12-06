@@ -46,7 +46,7 @@ export default ({ printerData }) => (
                             </h3>
                             {print_job && (
                                 <div class="time">
-                                    <span>{print_job.time_elapsed}</span> out of{' '}
+                                    <span>{print_job.time_elapsed}</span>/
                                     <span>{print_job.time_total}</span>
                                 </div>
                             )}
