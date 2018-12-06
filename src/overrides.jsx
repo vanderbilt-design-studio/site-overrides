@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'wss://vanderbilt-design-studio.herokuapp.com/'
         );
         printerSocket.onmessage = ({ data }) => {
-            state = { ...state, printerData: JSON.parse(data) };
+            state = { ...state, printerData: JSON.parse(data).printers };
             renderFooter();
         };
     }
