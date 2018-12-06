@@ -50,7 +50,20 @@ export default ({ printerData }) => (
                                     <span>{print_job.time_total}</span>
                                 </div>
                             )}
-                            {camera && <img src={camera.snapshot} />}
+                            {camera && (
+                                <div>
+                                    <a href={'#' + system.name + '-lightbox'}>
+                                        <img src={camera.snapshot} />
+                                    </a>
+                                    <a
+                                        href="#_"
+                                        class="lightbox"
+                                        id={system.name + '-lightbox'}
+                                    >
+                                        <img src={camera.snapshot} />
+                                    </a>
+                                </div>
+                            )}
                         </div>
                     </div>
                 ))}
