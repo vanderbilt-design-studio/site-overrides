@@ -10,6 +10,15 @@ const formatState = print_job => {
             // checking time_elapsed < time_total but we don't have any client-side
             // time duration library at the moment. For now, done is more clear to
             // our customers than wait_cleanup.
+            const time_elapsed = Date.parse(
+                '02 Jan 1970 ' + print_job.time_elapsed + ' GMT'
+            );
+            const time_total = Date.parse(
+                '02 Jan 1970 ' + print_job.time_total + ' GMT'
+            );
+            if (time_elapsed < time_total) {
+                return 'aborted';
+            }
             return 'done';
         default:
             return print_job.state;
@@ -48,14 +57,20 @@ export default ({ printerData }) => (
                             {camera && (
                                 <div class="camera">
                                     <a href={'#' + system.name + '-lightbox'}>
-                                        <img src={camera.snapshot} />
+                                        <img
+                                            src={camera.snapshot}
+                                            alt="Livestream of the printer camera feed"
+                                        />
                                     </a>
                                     <a
                                         href="#_"
                                         class="lightbox"
                                         id={system.name + '-lightbox'}
                                     >
-                                        <img src={camera.snapshot} />
+                                        <img
+                                            src={camera.snapshot}
+                                            alt="Livestream in a lightbox"
+                                        />
                                     </a>
                                 </div>
                             )}
