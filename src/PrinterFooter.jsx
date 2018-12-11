@@ -4,17 +4,11 @@ import ultimaker from '../assets/ultimaker-3-1@3x.png';
 const formatState = print_job => {
     switch (print_job.state) {
         case 'wait_cleanup':
-            // The name of this state is unclear; it seems to simply trigger
-            // when the build plate needs to be cleaned, which happens whether the
-            // print succeeds or fails. The key to determining failure is probably
-            // checking time_elapsed < time_total but we don't have any client-side
-            // time duration library at the moment. For now, done is more clear to
-            // our customers than wait_cleanup.
             const time_elapsed = Date.parse(
-                '02 Jan 1970 ' + print_job.time_elapsed + ' GMT'
+                '01 Jan 1970 ' + print_job.time_elapsed + ' GMT'
             );
             const time_total = Date.parse(
-                '02 Jan 1970 ' + print_job.time_total + ' GMT'
+                '01 Jan 1970 ' + print_job.time_total + ' GMT'
             );
             if (time_elapsed < time_total) {
                 return 'aborted';
