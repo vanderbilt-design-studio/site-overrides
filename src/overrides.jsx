@@ -33,7 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     renderSidebar();
 
-    const signSocket = new ReconnectingWebSocket('wss://ds-sign.yunyul.in');
+    const signSocket = new ReconnectingWebSocket(
+        'wss://sign.vanderbilt.design'
+    );
     signSocket.onmessage = ({ data }) => {
         state = { ...state, signData: JSON.parse(data) };
         renderSidebar();
