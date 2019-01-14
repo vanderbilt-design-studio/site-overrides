@@ -64,6 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
         printerSocket.onmessage = ({ data }) => {
             state = { ...state, printerData: JSON.parse(data).printers };
             renderFooter();
+
+            // Save users' data on cellular connections, they can manually
+            // refresh instead.
+            const connectionType =
+                navigator.connection && navigator.connection.type;
+            if (connectionType && connectionType == 'cellular') {
+                printerSocket.close();
+            }
         };
     }
 });
