@@ -15,7 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     const sidebar = document.getElementById('sidebar__right');
-    const hoursTitle = clearNode(sidebar.getElementsByTagName('h4')[1]);
+    const headers = sidebar.getElementsByTagName('h4');
+    const hoursTitleIndex = headers[0].classList.contains('child_header')
+        ? 2
+        : 1;
+    const hoursTitle = clearNode(headers[hoursTitleIndex]);
     render(<span>Schedule</span>, hoursTitle);
 
     const sidebarWidget = clearNode(
