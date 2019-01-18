@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ? 2
         : 1;
     const hoursTitle = clearNode(headers[hoursTitleIndex]);
-    render(<span>Schedule</span>, hoursTitle);
+    render(<span>Hours</span>, hoursTitle);
 
     const sidebarWidget = clearNode(
         sidebar.getElementsByClassName('textwidget')[1]
