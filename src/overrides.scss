@@ -57,6 +57,11 @@
     display: none !important;
 }
 
+/* Get rid of footer (Your Vanderblit, Quick Links) */
+#vu-footer {
+    display: none !important;
+}
+
 /* Fix the hours sidebar widget wrapping the time ranges when the screen size is in this range */
 @media (min-width: 768px) and (max-width: 979px) {
     .col-sm-3 {
