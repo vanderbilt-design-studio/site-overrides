@@ -59,7 +59,9 @@
 
 /* Get rid of footer (Your Vanderblit, Quick Links) */
 #vu-footer {
-    display: none !important;
+    .container {
+        display: none !important;
+    }
 }
 
 /* Fix the hours sidebar widget wrapping the time ranges when the screen size is in this range */
