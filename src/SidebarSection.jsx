@@ -16,7 +16,7 @@ const Hours = () => (
                 <td>
                     12 PM – 2PM
                     <br />
-                    4PM - 10 PM
+                    2:30PM - 10 PM
                 </td>
             </tr>
             <tr>
