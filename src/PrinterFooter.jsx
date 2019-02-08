@@ -42,7 +42,7 @@ export default ({ printerData }) => (
                             <h3 class="status">
                                 {formatStatus(printer, print_job)}
                             </h3>
-                            {print_job && (
+                            {print_job && print_job.time_total != '0:00:00' && (
                                 <div class="time">
                                     <span>{print_job.time_elapsed}</span>/
                                     <span>{print_job.time_total}</span>
