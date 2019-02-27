@@ -70,12 +70,28 @@ document.addEventListener('DOMContentLoaded', () => {
             renderFooter();
 
             // Save users' data on cellular connections, they can manually
-            // refresh instead.
+            // refresh the page instead.
             const connectionType =
                 navigator.connection && navigator.connection.type;
             if (connectionType && connectionType == 'cellular') {
                 printerSocket.close();
             }
         };
+
+        // Save user data when page not visible.
+        document.addEventListener(
+            'visibilitychange',
+            (_, event) => {
+                if (document.hidden) {
+                    printerSocket.close();
+                } else if (
+                    document.visibilityState &&
+                    document.visibilityState.visible
+                ) {
+                    printerSocket.open();
+                }
+            },
+            false
+        );
     }
 });
