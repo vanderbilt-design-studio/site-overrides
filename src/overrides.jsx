@@ -81,14 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Save user data when page not visible.
         document.addEventListener(
             'visibilitychange',
-            (_, event) => {
-                if (document.hidden) {
-                    printerSocket.close();
-                } else if (
-                    document.visibilityState &&
-                    document.visibilityState.visible
-                ) {
-                    printerSocket.open();
+            () => {
+                if (document.visibilityState) {
+                    if (document.visibilityState == 'hidden') {
+                        printerSocket.close();
+                    } else if (document.visibilityState == 'visible') {
+                        printerSocket.open();
+                    }
                 }
             },
             false

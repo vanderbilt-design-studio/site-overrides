@@ -11,9 +11,11 @@ const formatState = print_job => {
                 '01 Jan 1970 ' + print_job.time_total + ' GMT'
             );
             if (time_elapsed < time_total) {
-                return 'aborted';
+                return 'print aborted';
             }
-            return 'done';
+            return 'print complete';
+        case 'pre_print':
+            return 'preparing to print';
         default:
             return print_job.state;
     }
@@ -23,7 +25,7 @@ const formatStatus = (printer, print_job) => {
     switch (printer.status) {
         case 'printing':
             if (print_job && print_job.state !== 'printing') {
-                return printer.status + ': ' + formatState(print_job);
+                return formatState(print_job);
             }
         default:
             return printer.status;
