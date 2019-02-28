@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (document.visibilityState == 'hidden') {
                         printerSocket.close();
                     } else if (document.visibilityState == 'visible') {
-                        printerSocket.open();
+                        printerSocket.reconnect();
                     }
                 }
             },
