@@ -37,41 +37,51 @@ export default ({ printerData }) => (
         {printerData &&
             [...printerData]
                 .sort((a, b) => a.system.name.localeCompare(b.system.name))
-                .map(({ system, printer, print_job, camera }) => (
-                    <div class="tile">
-                        <div class="detail">
-                            <h2 class="name">{system.name}</h2>
-                            <h3 class="status">
-                                {formatStatus(printer, print_job)}
-                            </h3>
-                            {print_job && print_job.time_total != '0:00:00' && (
-                                <div class="time">
-                                    <span>{print_job.time_elapsed}</span>/
-                                    <span>{print_job.time_total}</span>
-                                </div>
-                            )}
-                            {camera && (
-                                <div class="camera">
-                                    <a href={'#' + system.name + '-lightbox'}>
-                                        <img
-                                            src={camera.snapshot}
-                                            alt="Livestream of the printer camera feed"
-                                        />
-                                    </a>
-                                    <a
-                                        href="#_"
-                                        class="lightbox"
-                                        id={system.name + '-lightbox'}
-                                    >
-                                        <img
-                                            src={camera.snapshot}
-                                            alt="Livestream in a lightbox"
-                                        />
-                                    </a>
-                                </div>
-                            )}
+                .map(({ system, printer, print_job, camera }) => {
+                    console.log(system, printer, print_job, camera);
+                    return (
+                        <div class="tile">
+                            <div class="detail">
+                                <h2 class="name">{system.name}</h2>
+                                <h3 class="status">
+                                    {formatStatus(printer, print_job)}
+                                </h3>
+                                {print_job &&
+                                    print_job.time_total != '0:00:00' && (
+                                        <div class="time">
+                                            <span>
+                                                {print_job.time_elapsed}
+                                            </span>
+                                            /<span>{print_job.time_total}</span>
+                                        </div>
+                                    )}
+                                {camera && (
+                                    <div class="camera">
+                                        <a
+                                            href={
+                                                '#' + system.name + '-lightbox'
+                                            }
+                                        >
+                                            <img
+                                                src={camera.snapshot}
+                                                alt="Livestream of the printer camera feed"
+                                            />
+                                        </a>
+                                        <a
+                                            href="#_"
+                                            class="lightbox"
+                                            id={system.name + '-lightbox'}
+                                        >
+                                            <img
+                                                src={camera.snapshot}
+                                                alt="Livestream in a lightbox for clicking"
+                                            />
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
     </div>
 );

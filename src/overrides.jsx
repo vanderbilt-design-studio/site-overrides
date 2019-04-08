@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const signSocket = new ReconnectingWebSocket(
         'wss://sign.vanderbilt.design'
     );
-    signSocket.onmessage = ({ data }) => {
-        state = { ...state, signData: JSON.parse(data) };
-        renderSidebar();
-    };
+    // signSocket.onmessage = ({ data }) => {
+    //     state = { ...state, signData: JSON.parse(data) };
+    //     renderSidebar();
+    // };
 
     const navbar = document.getElementById('sitenav');
     if (navbar.firstChild.classList.contains('current_page_item')) {
@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'wss://iot.vanderbilt.design/printers'
         );
         printerSocket.onmessage = ({ data }) => {
+            console.log(JSON.stringify(JSON.parse(data)));
             state = { ...state, printerData: JSON.parse(data).printers };
             renderFooter();
 
