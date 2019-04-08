@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderFooter();
 
         const printerSocket = new ReconnectingWebSocket(
-            'wss://iot.vanderbilt.design/'
+            'wss://iot.vanderbilt.design/printers'
         );
         printerSocket.onmessage = ({ data }) => {
             state = { ...state, printerData: JSON.parse(data).printers };
