@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'wss://iot.vanderbilt.design/printers'
         );
         printerSocket.onmessage = ({ data }) => {
-            console.log(JSON.stringify(JSON.parse(data)));
             state = { ...state, printerData: JSON.parse(data).printers };
             renderFooter();
 
