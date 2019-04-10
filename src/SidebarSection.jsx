@@ -41,8 +41,8 @@ const Hours = () => (
 
 export default ({ signData }) => (
     <div>
-        <iframe class="status-sign" src="https://sign2.vanderbilt.design" />
         <Hours />
         <p>We are closed during all school holidays and breaks.</p>
+        <iframe class="status-sign" src="https://sign2.vanderbilt.design" />
     </div>
 );
