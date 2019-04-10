@@ -76,29 +76,8 @@
 }
 
 .status-sign {
-    color: #fff;
-    margin: 10px 0;
-    padding: 5px;
-    height: 108px;
     width: 100%;
-    position: relative;
-    font-weight: bold;
-    text-align: center;
-    box-sizing: border-box;
-
-    .sign-text {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .title {
-        font-size: 1.33em;
-    }
-
-    .subtitle {
-        font-size: 0.85em;
-    }
+    border: none;
 }
 
 .hours {

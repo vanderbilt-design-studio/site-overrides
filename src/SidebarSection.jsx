@@ -39,18 +39,9 @@ const Hours = () => (
     </table>
 );
 
-const StatusSign = ({ bgColor, title, subtitle }) => (
-    <div class="status-sign" style={{ backgroundColor: bgColor || '#777' }}>
-        <div class="sign-text">
-            <div class="title">{title}</div>
-            <div class="subtitle">{subtitle}</div>
-        </div>
-    </div>
-);
-
 export default ({ signData }) => (
     <div>
-        {signData && <StatusSign {...signData} />}
+        <iframe class="status-sign" src="https://sign2.vanderbilt.design" />
         <Hours />
         <p>We are closed during all school holidays and breaks.</p>
     </div>
