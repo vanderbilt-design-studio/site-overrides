@@ -56,7 +56,7 @@ export default ({ printerData }) => (
                             )}
                             {camera && (
                                 <div class="camera">
-                                    <a href={'#' + system.name + '-lightbox'}>
+                                    <a href={'#' + system.name + '-lightbox'} class="preview">
                                         <img
                                             src={camera.snapshot}
                                             alt="Livestream of the printer camera feed"
