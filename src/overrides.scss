@@ -37,6 +37,11 @@
     }
 }
 
+/* Hide recent news showing in the right column despite not being selected in theme customization */
+.sidebar-news {
+    display: none;
+}
+
 /* Less ugly VUSE logo */
 .englogo h1 a {
     background: url('../assets/ENGIN-logo.svg') no-repeat !important;
