@@ -37,14 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     renderSidebar();
 
-    const signSocket = new ReconnectingWebSocket(
-        'wss://sign.vanderbilt.design'
-    );
-    // signSocket.onmessage = ({ data }) => {
-    //     state = { ...state, signData: JSON.parse(data) };
-    //     renderSidebar();
-    // };
-
     const navbar = document.getElementById('sitenav');
     if (navbar.firstChild.classList.contains('current_page_item')) {
         const primaryContent = document.getElementsByClassName(
