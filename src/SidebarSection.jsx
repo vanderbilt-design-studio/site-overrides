@@ -41,6 +41,8 @@ export default ({ signData }) => (
     <div>
         <Hours />
         <p>We are closed during all school holidays and breaks.</p>
+        <div class="status-sign-container">
         <iframe class="status-sign" src="https://sign2.vanderbilt.design" />
+        </div>
     </div>
 );

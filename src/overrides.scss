@@ -80,9 +80,19 @@
     }
 }
 
+.status-sign-container {
+	overflow: hidden;
+	padding-top: 56.25%;
+	position: relative;
+}
+
 .status-sign {
     width: 100%;
+    height: 100%;
     border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .hours {
