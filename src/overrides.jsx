@@ -63,6 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        const hoursSocket = new ReconnectingWebSocket(
+            'wss://iot.vanderbilt.design/hours'
+        );
+        hoursSocket.onmessage = ({ data }) => {
+            state = { ...state, hoursData: JSON.parse(data) };
+            renderSidebar();
+        };
+
         // Save user data when page not visible.
         document.addEventListener(
             'visibilitychange',
