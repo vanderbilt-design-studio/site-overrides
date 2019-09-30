@@ -45,9 +45,9 @@ export default ({ printerData }) => (
                     <div class="tile">
                         <div class="detail">
                             <h2 class="name">{system.name}</h2>
-                            <h3 class="status">
+                            <p class="status">
                                 {formatStatus(printer, print_job)}
-                            </h3>
+                            </p>
                             {print_job && print_job.time_total != '0:00:00' && (
                                 <div class="time">
                                     <span>{print_job.time_elapsed}</span>/
