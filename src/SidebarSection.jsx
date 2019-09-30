@@ -7,7 +7,7 @@ export default ({ hoursData }) => (
                 {hoursData && hoursData.map(({ day_of_week, hours }) => (
                     <tr>
                         <td>{day_of_week}</td>
-                        <td>{hours.join(',')}</td>
+                        <td>{hours.length > 0 ? hours.join(',') : 'Closed'}</td>
                     </tr>
                 ))}
             </tbody>
