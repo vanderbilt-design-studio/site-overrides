@@ -29,8 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     };
     renderSidebar();
+    const hoursSocket = new ReconnectingWebSocket(
+        'wss://iot.vanderbilt.design/hours'
+    );
+    hoursSocket.onmessage = ({ data }) => {
+        state = { ...state, hoursData: JSON.parse(data) };
+        renderSidebar();
+    };
 
     const navbar = document.getElementById('sitenav');
+    // Only render on homepage
     if (navbar.firstChild.classList.contains('current_page_item')) {
         const primaryContent = document.getElementsByClassName(
             'primary-content'
@@ -61,14 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (connectionType && connectionType == 'cellular') {
                 printerSocket.close();
             }
-        };
-
-        const hoursSocket = new ReconnectingWebSocket(
-            'wss://iot.vanderbilt.design/hours'
-        );
-        hoursSocket.onmessage = ({ data }) => {
-            state = { ...state, hoursData: JSON.parse(data) };
-            renderSidebar();
         };
 
         // Save user data when page not visible.
