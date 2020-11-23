@@ -14,7 +14,7 @@ export default ({ hoursData }) => (
         </table>
         <p>We are closed during all <a href="https://registrar.vanderbilt.edu//calendars/">school holidays and breaks</a> unless otherwise noted.</p>
         <div class="status-sign-container">
-            <iframe class="status-sign" src="https://sign2.vanderbilt.design" />
+            <iframe class="status-sign" src="https://sign.vanderbilt.design" />
         </div>
     </div>
 );
